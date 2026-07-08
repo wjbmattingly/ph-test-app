@@ -1,28 +1,36 @@
-// middleware.js — Vercel Edge Middleware
+// middleware.js — Vercel Routing (Edge) Middleware
 //
 // Gates the entire deployment behind HTTP Basic Auth. Runs on every request
 // (static pages, assets, and the /api functions) before anything is served,
 // so nothing is reachable without the shared username/password.
 //
 // Credentials come from environment variables set in the Vercel dashboard
-// (Settings -> Environment Variables): USERNAME and PASSWORD. If either is
-// unset, the gate is disabled and the site stays open (so a missing var
-// can't lock you out of your own deployment).
+// (Settings -> Environment Variables): USERNAME and PASSWORD. Set them for
+// the Production (and Preview) environments, then redeploy.
+//
+// Fails CLOSED: if the credentials aren't configured, the site returns a
+// 503 with a clear message rather than silently staying open. This also
+// makes it easy to tell whether the middleware is running at all:
+//   - login prompt      -> working; enter the shared credentials
+//   - "not configured"  -> middleware runs, but env vars are missing
+//   - normal site loads -> middleware is NOT running (not deployed, or the
+//                          file isn't at the repo root)
 //
 // Note: this runs only on Vercel — local `npm run dev` is not gated.
-
-export const config = {
-  // Match every path. Basic Auth credentials are re-sent by the browser on
-  // all same-origin requests, so the /api calls keep working once signed in.
-  matcher: '/(.*)',
-};
+//
+// No `config`/matcher is exported, so it runs on every path by default.
 
 export default function middleware(request) {
   const USER = process.env.USERNAME;
   const PASS = process.env.PASSWORD;
 
-  // Not configured -> don't lock anyone out.
-  if (!USER || !PASS) return;
+  if (!USER || !PASS) {
+    return new Response(
+      'Access gate is not configured. Set USERNAME and PASSWORD environment '
+        + 'variables in Vercel (Settings → Environment Variables), then redeploy.',
+      { status: 503, headers: { 'content-type': 'text/plain' } },
+    );
+  }
 
   const header = request.headers.get('authorization') || '';
   const [scheme, encoded] = header.split(' ');
