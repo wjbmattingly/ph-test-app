@@ -1,0 +1,643 @@
+{
+  "tileSource": "https://placing-holocaust-tiles.s3.us-east-2.amazonaws.com/gazetteer_processed.pmtiles",
+  "sourceLayer": "gazetteer_full_output_processed",
+  "dropdownFilters": [
+    {
+      "field": "SiteType",
+      "label": "Type of Site",
+      "type": "dropdown",
+      "category": "General",
+      "loadFrom": "tiles",
+      "options": [
+        "Camp",
+        "Death camp",
+        "Ghetto",
+        "Main camp",
+        "Subcamp"
+      ]
+    },
+    {
+      "field": "EncyStruc",
+      "label": "Encyclopedia Structure",
+      "type": "dropdown",
+      "category": "General",
+      "loadFrom": "tiles",
+      "options": [
+        "Arbeitsdorf",
+        "Armee-Gefangenensammelstelle (AGSSt)",
+        "Auschwitz",
+        "Bergen-Belsen",
+        "Bia\u0142ystok Region",
+        "Buchenwald",
+        "Bulgaria",
+        "Croatia",
+        "Dachau",
+        "Durchgangslager (Dulag)",
+        "Early camps",
+        "Eastern Belorussia Region",
+        "Eastern Galicia Region",
+        "Eastern Ukraine and Crimea Region",
+        "Eastern Upper Silesia Region",
+        "Endlager",
+        "Estonia and Latvia Regions",
+        "Finland",
+        "Flossenb\u00fcrg",
+        "Fl\u00fcchtlingslager (FL)",
+        "France/Vichy",
+        "Frontstammlager (Frontstalag)",
+        "German-occupied Greece",
+        "Gross-Rosen",
+        "Hauptfl\u00fcchtlingslager (HFL)",
+        "Heimkehrerlager (Heilag)",
+        "Herzogenbusch",
+        "Hinzert",
+        "Hungary",
+        "Internierungslager (Ilag)",
+        "Italian-occupied Albania",
+        "Italian-occupied Greece",
+        "Italian-occupied North Africa",
+        "Italian-occupied Southeast France",
+        "Italian-occupied Yugoslavia",
+        "Italy",
+        "Jugenderziehungslager (JEL)",
+        "Kauen",
+        "Kiev Region",
+        "Konzentrationslager (KL)",
+        "Krakau-Plaszow",
+        "Krak\u00f3w Region",
+        "Kriegsgefangenenlager (KGL)",
+        "Kriegswehrmachtgef\u00e4ngnis (KWG)",
+        "Labor camp",
+        "Lithuania Region",
+        "Lublin",
+        "Lublin Region",
+        "Mannschaftsstammlager (Stalag)",
+        "Marine Durchgangslager (Dulag)",
+        "Marinelager Marineinterniertenlager (Marlag Milag)",
+        "Mauthausen",
+        "Mittelbau",
+        "Natzweiler-Struthof",
+        "Neuengamme",
+        "Nikolaev and Dnepropetrovsk Regions",
+        "Norway",
+        "Occupied Russian Territory",
+        "Offizierlager (Oflag)",
+        "Protectorate of Bohemia and Moravia",
+        "Radom Region",
+        "Ravensbr\u00fcck",
+        "Riga-Kaiserwald",
+        "Romania",
+        "SS-Baubrigaden & SS-Eisenbahnbaubrigaden",
+        "Sachsenhausen",
+        "Sammellager",
+        "Serbia",
+        "Slovakia",
+        "Sonderlager",
+        "Stutthof",
+        "Tunisia",
+        "Untersuchungsgef\u00e4ngnisse (UG)",
+        "Vaivara",
+        "Vichy Africa",
+        "Volhynia and Podolia Region",
+        "Warsaw Region",
+        "Warschau",
+        "Warthegau Region",
+        "Wehrmachtgefangenenlager (WGL)",
+        "Wehrmachtgef\u00e4ngnis (WG)",
+        "Weissruthenien Region",
+        "Wewelsburg",
+        "Youth Camp",
+        "Zhytomyr Region",
+        "Zichenau Region"
+      ]
+    }
+  ],
+  "fieldControlsByDataset": {
+    "camp": [
+      {
+        "field": "EncyChap",
+        "label": "Which subcamps belonged to a given main camp system?",
+        "category": "Basic Characteristics",
+        "type": "dropdown",
+        "options": [
+          "Arbeitsdorf",
+          "Auschwitz",
+          "Bergen-Belsen",
+          "Buchenwald",
+          "Dachau",
+          "Early Camps",
+          "Flossenb\u00fcrg",
+          "Gross-Rosen",
+          "Herzogenbusch",
+          "Hinzert",
+          "Kauen",
+          "Krakau-Plaszow",
+          "Lublin",
+          "Mauthausen",
+          "Mittelbau",
+          "Natzweiler-Struthof",
+          "Neuengamme",
+          "Ravensbr\u00fcck",
+          "Riga-Kaiserwald",
+          "SS-Baubrigaden & SS-Eisenbahnbaubrigaden",
+          "Sachsenhausen",
+          "Stutthof",
+          "Vaivara",
+          "Warschau",
+          "Wewelsburg",
+          "Youth Camp"
+        ]
+      },
+      {
+        "field": "StartMid_ISO",
+        "label": "When were camps established?",
+        "category": "Basic Characteristics",
+        "type": "time-slider",
+        "options": {
+          "start": "1933-02-01",
+          "end": "1945-05-05"
+        }
+      },
+      {
+        "field": "EndMid_ISO",
+        "label": "When did camps cease to operate?",
+        "category": "Basic Characteristics",
+        "type": "time-slider",
+        "options": {
+          "start": "1933-02-01",
+          "end": "1945-05-05"
+        }
+      },
+      {
+        "field": "DurMid",
+        "label": "How long were camps in operation?",
+        "category": "Basic Characteristics",
+        "type": "slider",
+        "options": {
+          "min": 0,
+          "max": 4421
+        }
+      },
+      {
+        "field": "Nation",
+        "label": "What nationalities were incarcerated?",
+        "category": "Captive Population",
+        "type": "multi-select",
+        "options": [
+          "Albanian",
+          "American",
+          "Austrian",
+          "Belgian",
+          "Bohemian/Moravian",
+          "British",
+          "Bulgarian",
+          "Croatian",
+          "Czech",
+          "Czechoslovak",
+          "Danish",
+          "Dutch",
+          "Estonian",
+          "French",
+          "German",
+          "Greek",
+          "Hungarian",
+          "Italian",
+          "Latvian",
+          "Lithuanian",
+          "Luxembourger",
+          "Norwegian",
+          "Polish",
+          "Romanian",
+          "Russian",
+          "Serbian",
+          "Slovak",
+          "Slovenian",
+          "Soviet",
+          "Spanish",
+          "Swiss",
+          "Ukrainian",
+          "Yugoslav",
+          "other",
+          "stateless",
+          "various"
+        ]
+      },
+      {
+        "field": "InmateType",
+        "label": "What German categories were applied to inmates?",
+        "category": "Captive Population",
+        "type": "multi-select",
+        "options": [
+          "Italian military internee (IMI)",
+          "Jehovah's Witness",
+          "Jewish",
+          "POW",
+          "Red Spaniard",
+          "Sinti or Roma ('Gypsies')",
+          "asocial",
+          "civilian forced labor",
+          "criminal",
+          "homosexual",
+          "other",
+          "perpetrator prisoner",
+          "political prisoner",
+          "protective or preventive custody",
+          "religious individual",
+          "resistance fighter",
+          "work-shy"
+        ]
+      },
+      {
+        "field": "PMaxPop",
+        "label": "What was the maximum known camp population?",
+        "category": "Captive Population",
+        "type": "slider",
+        "options": {
+          "min": 1,
+          "max": 405000
+        }
+      },
+      {
+        "field": "LaborType",
+        "label": "What types of work were inmates forced to do?",
+        "category": "Captive Labor",
+        "type": "multi-select",
+        "options": [
+          "SS-assigned labor",
+          "armaments",
+          "building material",
+          "camp construction",
+          "camp operations",
+          "civic defense",
+          "cleaning",
+          "construction",
+          "death labor",
+          "extractive industry",
+          "farm labor",
+          "forest labor",
+          "gardening",
+          "manufacturing",
+          "medical experiments",
+          "medical work",
+          "none",
+          "office work",
+          "other",
+          "sex work",
+          "transporting materials",
+          "unspecified",
+          "work in a hospital"
+        ]
+      },
+      {
+        "field": "HoldPStruc",
+        "label": "In what structures were inmates housed?",
+        "category": "Place Characteristics",
+        "type": "multi-select",
+        "options": [
+          "Jewish community building(s)",
+          "ag./ind./mil. building(s)",
+          "ag/mil building",
+          "barrack",
+          "castle",
+          "district",
+          "factory building",
+          "field/outdoors",
+          "house(s)",
+          "hut, shed, or tent",
+          "jail, prison, or cell",
+          "market square",
+          "neighborhood",
+          "other",
+          "other building",
+          "private residence",
+          "public building",
+          "public building(s)",
+          "street(s)",
+          "uncertain",
+          "underground",
+          "unknown",
+          "unspecified",
+          "whole settlement"
+        ]
+      },
+      {
+        "field": "Epidemic",
+        "label": "What contagious disease(s) occurred in camps?",
+        "category": "Captive Population",
+        "type": "multi-select",
+        "options": [
+          "Dysentery",
+          "Tuberculosis",
+          "Typhoid",
+          "Typhus",
+          "diphteria",
+          "dysentery",
+          "none",
+          "other named disease(s)",
+          "tuberculosis",
+          "typhoid",
+          "typhus",
+          "uncertain",
+          "unknown",
+          "unspecified epidemic"
+        ]
+      },
+      {
+        "field": "Demographics",
+        "label": "What demographic groups were inmates?",
+        "category": "Captive Population",
+        "type": "multi-select",
+        "options": [
+          "Men",
+          "Women",
+          "Elderly",
+          "Youth",
+          "Children"
+        ]
+      }
+    ],
+    "ghetto": [
+      {
+        "field": "EncyStruc",
+        "label": "In what German administrative region were ghettos located?",
+        "category": "Basic Characteristics",
+        "type": "dropdown",
+        "options": [
+          "Bia\u0142ystok Region",
+          "Bulgaria",
+          "Eastern Belorussia Region",
+          "Eastern Galicia Region",
+          "Eastern Ukraine and Crimea Region",
+          "Eastern Upper Silesia Region",
+          "Estonia and Latvia Regions",
+          "France/Vichy",
+          "German-occupied Greece",
+          "Hungary",
+          "Kiev Region",
+          "Krak\u00f3w Region",
+          "Lithuania Region",
+          "Lublin Region",
+          "Nikolaev and Dnepropetrovsk Regions",
+          "Occupied Russian Territory",
+          "Protectorate of Bohemia and Moravia",
+          "Radom Region",
+          "Romania",
+          "Volhynia and Podolia Region",
+          "Warsaw Region",
+          "Warthegau Region",
+          "Weissruthenien Region",
+          "Zhytomyr Region",
+          "Zichenau Region"
+        ]
+      },
+      {
+        "field": "GerOcMid_ISO",
+        "label": "When did German occupation begin?",
+        "category": "Basic Characteristics",
+        "type": "time-slider",
+        "options": {
+          "start": "1933-02-01",
+          "end": "1945-05-05"
+        }
+      },
+      {
+        "field": "Judenrat",
+        "label": "Was there a Judenrat (Jewish Council)?",
+        "category": "Basic Characteristics",
+        "type": "dropdown",
+        "options": [
+          "no",
+          "uncertain",
+          "unknown",
+          "yes"
+        ]
+      },
+      {
+        "field": "StartMid_ISO",
+        "label": "When were ghettos established?",
+        "category": "Basic Characteristics",
+        "type": "time-slider",
+        "options": {
+          "start": "1933-02-01",
+          "end": "1945-05-05"
+        }
+      },
+      {
+        "field": "Labor",
+        "label": "What types of work were Jews forced to do?",
+        "category": "Captive Labor",
+        "type": "multi-select",
+        "options": [
+          "armaments",
+          "building materials",
+          "civic defense",
+          "cleaning",
+          "collection of the dying",
+          "construction",
+          "farm labor",
+          "manufacturing",
+          "none",
+          "oil and coal",
+          "other",
+          "transporting materials",
+          "uncertain",
+          "unknown",
+          "unspecified"
+        ]
+      },
+      {
+        "field": "Refugee",
+        "label": "Which ghettos received Jews from elsewhere?",
+        "category": "Captive Population",
+        "type": "dropdown",
+        "options": [
+          "no",
+          "uncertain",
+          "unknown",
+          "yes"
+        ]
+      },
+      {
+        "field": "Epidemic",
+        "label": "What epidemic disease(s) occurred?",
+        "category": "Captive Population",
+        "type": "multi-select",
+        "options": [
+          "Dysentery",
+          "Tuberculosis",
+          "Typhoid",
+          "Typhus",
+          "diphteria",
+          "dysentery",
+          "none",
+          "other named disease(s)",
+          "tuberculosis",
+          "typhoid",
+          "typhus",
+          "uncertain",
+          "unknown",
+          "unspecified epidemic"
+        ]
+      },
+      {
+        "field": "EndMid_ISO",
+        "label": "When did ghettos cease to exist or become different kinds of sites?",
+        "category": "Basic Characteristics",
+        "type": "time-slider",
+        "options": {
+          "start": "1933-02-01",
+          "end": "1945-05-05"
+        }
+      },
+      {
+        "field": "DurMid",
+        "label": "How long did ghettos exist (in days)?",
+        "category": "Basic Characteristics",
+        "type": "slider",
+        "options": {
+          "min": 0,
+          "max": 4421
+        }
+      },
+      {
+        "field": "GPopMax",
+        "label": "What was the maximum known ghetto population?",
+        "category": "Captive Population",
+        "type": "slider",
+        "options": {
+          "min": 18,
+          "max": 460000
+        }
+      },
+      {
+        "field": "RestrType",
+        "label": "What restrictions were imposed on Jews?",
+        "category": "Captive Population",
+        "type": "multi-select",
+        "options": [
+          "Jewish police",
+          "bodies marked",
+          "bodily harm",
+          "cultural",
+          "dispossession",
+          "economic activity",
+          "homes marked",
+          "imprisonment",
+          "labor",
+          "leaving holding place",
+          "leaving settlement",
+          "movement within settlement",
+          "murder",
+          "other",
+          "registration",
+          "residential separation",
+          "sexual violence",
+          "uncertain",
+          "unknown",
+          "unspecified"
+        ]
+      },
+      {
+        "field": "HoldPStruc",
+        "label": "In what structures or spaces were Jews held?",
+        "category": "Place Characteristics",
+        "type": "multi-select",
+        "options": [
+          "Jewish community building(s)",
+          "ag./ind./mil. building(s)",
+          "ag/mil building",
+          "barrack",
+          "castle",
+          "district",
+          "factory building",
+          "field/outdoors",
+          "house(s)",
+          "hut, shed, or tent",
+          "jail, prison, or cell",
+          "market square",
+          "neighborhood",
+          "other",
+          "other building",
+          "private residence",
+          "public building",
+          "public building(s)",
+          "street(s)",
+          "uncertain",
+          "underground",
+          "unknown",
+          "unspecified",
+          "whole settlement"
+        ]
+      },
+      {
+        "field": "EnclType",
+        "label": "How were ghettos enclosed?",
+        "category": "Place Characteristics",
+        "type": "multi-select",
+        "options": [
+          "barbed wire",
+          "existing building(s)",
+          "fence",
+          "gate",
+          "geographic feature",
+          "guard(s)",
+          "never enclosed",
+          "other",
+          "sign(s)",
+          "uncertain",
+          "unknown",
+          "unspecified",
+          "wall"
+        ]
+      },
+      {
+        "field": "GType",
+        "label": "How are ghettos defined in the Encyclopedia?",
+        "category": "Place Characteristics",
+        "type": "multi-select",
+        "options": [
+          "Jewish district",
+          "camp",
+          "closed",
+          "collection point",
+          "destruction ghetto",
+          "enclosed",
+          "none given",
+          "open",
+          "other",
+          "remnant ghetto",
+          "sealed",
+          "transit ghetto"
+        ]
+      },
+      {
+        "field": "Demographics",
+        "label": "What demographic groups were inmates?",
+        "category": "Captive Population",
+        "type": "multi-select",
+        "options": [
+          "Men",
+          "Women",
+          "Elderly",
+          "Youth",
+          "Children"
+        ]
+      }
+    ]
+  },
+  "highlightFields": [
+    "SiteName",
+    "SiteType",
+    "StartMid",
+    "mentioned_in_transcripts"
+  ],
+  "popupFields": [
+    "SiteName",
+    "SiteType",
+    "dropdown_EncyStruc",
+    "StartMid",
+    "EndMid"
+  ],
+  "timelineField": "StartMid",
+  "colorByField": "SiteType"
+}

@@ -1,0 +1,54 @@
+# .github/workflows/deploy.yml v2
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Trigger deployment on push to main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21.2.0' # Specify your Node.js version here
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      #- name: Lint Code
+       # run: npm run lint
+        # Ensure you have a lint script in your package.json
+
+      #- name: Run Tests
+       # run: npm run test
+        # Ensure you have a test script in your package.json
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Generate Static Files
+        run: npm run generate
+
+      # Copy your custom domain file into the publish directory
+      - name: Copy CNAME
+        run: cp CNAME dist/CNAME
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+

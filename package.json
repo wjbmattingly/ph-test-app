@@ -1,0 +1,42 @@
+{
+  "name": "placing-holocaust-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "transcripts:build": "node scripts/build-transcripts.js",
+    "predev": "npm run transcripts:build",
+    "prebuild": "npm run transcripts:build",
+    "pregenerate": "npm run transcripts:build",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue .",
+    "lint:fix": "eslint --fix --ext .js,.vue .",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "core-js": "^3.25.3",
+    "dotenv": "^17.4.2",
+    "h3": "^2.0.1-rc.5",
+    "jest-environment-jsdom": "^29.7.0",
+    "maplibre-gl": "5.0.1",
+    "nuxt": "^2.15.8",
+    "pmtiles": "^4.2.1",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@nuxtjs/eslint-config": "^12.0.0",
+    "@vue/test-utils": "^2.4.6",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-vue": "^9.32.0",
+    "jest": "^29.7.0",
+    "vue-jest": "^3.0.7"
+  }
+}

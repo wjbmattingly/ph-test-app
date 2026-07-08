@@ -1,0 +1,91 @@
+/* assets/main.css */
+
+/* Reset some default styles */
+html, body {
+    height: 100%;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    font-family: 'usual', sans-serif; /* Default font for body text */
+  }
+  
+  /* Apply Adobe Font for headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'ivypresto-text', sans-serif;
+  }
+  
+  /* Links */
+  a {
+    color: #000000;
+    text-decoration: none;
+    transition: text-decoration 0.3s, color 0.3s;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #555555;
+  }
+  
+  /* Buttons */
+  button, .btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  button:hover, .btn:hover {
+    background-color: #333333;
+    border-color: #333333;
+  }
+  
+  /* Inputs */
+  input, select, textarea {
+    border: 1px solid #000000;
+    border-radius: 5px; /* Rounded edges */
+    padding: 8px;
+    font-family: 'inherit';
+  }
+  
+  /* Containers */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Grid System */
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .column {
+    /* Optional: Additional styling for columns */
+    
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .margin-top-20 {
+    margin-top: 20px;
+  }
+  
+  .padding-20 {
+    padding: 20px;
+  }
+  
+  /* Add more global styles as needed */
+  
