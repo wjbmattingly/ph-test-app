@@ -10,5 +10,10 @@
   },
   "rewrites": [
     { "source": "/(.*)", "destination": "/200.html" }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "main": false
+    }
+  }
 }

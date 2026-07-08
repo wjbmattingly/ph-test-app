@@ -61,8 +61,10 @@ export default {
   
   // Generate Configuration
   generate: {
-    // Use SPA-style fallback so dynamic routes (e.g., /transcripts/:rg) work without pre-generation
-    fallback: true,
+    // Use SPA-style fallback so dynamic routes (e.g., /transcripts/:rg) work
+    // without pre-generation. '200.html' is served with a 200 status; the
+    // Vercel rewrite in vercel.json points unmatched routes here.
+    fallback: '200.html',
     // Avoid pre-generating every transcript detail page; keep the listing route so it’s always present
     routes: ['/transcripts'],
     crawler: false
